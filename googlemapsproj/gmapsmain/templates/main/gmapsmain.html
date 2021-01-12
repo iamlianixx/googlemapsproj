@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <title>Simple Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1S4bWsp-AkPzq0I16_rZJ89c1AXdNmyE&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+    <script src="{% static 'js/index.js' %}"></script>
+  </head>
+  <body>
+    <div id="map"></div>
+  </body>
+</html>
