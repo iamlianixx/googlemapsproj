@@ -1,0 +1,6 @@
+# my.cnf
+[client]
+database = julliansibi$googlemapsapp
+user = julliansibi
+password = pyany123
+default-character-set = utf8
