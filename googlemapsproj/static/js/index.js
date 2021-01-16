@@ -179,13 +179,28 @@ function createMarker(place) {
   markers.push(marker);
   marker.addListener("click", () => {
     console.log(place);
+    
+    if(infowindow !== null && isInfoWindowOpen(infowindow)){
+        infowindow.close();
+    }
+      
     infowindow = new google.maps.InfoWindow();
     let contentString = "<p><b>" + place.name + "</b><br/>" + 
         "Address: " + place.formatted_address + "<br/>" +
-        "Phone #: " + place.formatted_phone_number + "<br/>";
+        "Rating: " + place.rating + "<br/>";
     infowindow.setContent(contentString);
     infowindow.open(map, marker);
   });
+}
+
+function isInfoWindowOpen(infoWindow){
+
+    if(infoWindow !== null && typeof map !== "undefined") {
+        var map = infoWindow.getMap();
+        return (map !== null && typeof map !== "undefined");
+    } else {
+        return false;
+    }
 }
 
 function setMapOnAll(map) {
