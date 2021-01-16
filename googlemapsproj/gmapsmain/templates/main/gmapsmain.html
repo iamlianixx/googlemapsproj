@@ -5,7 +5,7 @@
     <title>Cebu Restaurants Map</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1S4bWsp-AkPzq0I16_rZJ89c1AXdNmyE&callback=initMap&libraries=&v=weekly"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1S4bWsp-AkPzq0I16_rZJ89c1AXdNmyE&callback=initMap&libraries=places&v=weekly"
       defer
     ></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -30,6 +30,38 @@
     <div class="panel panel-default" id="restoFilter">
         <div class="panel-heading">Filter Restaurants by:</div>
         <div class="panel-body">
+            <div class="row">
+                <div class="col-md-9 col-xs-9">All</div>
+                <div class="col-md-3 col-xs-3">
+                    <div class="material-switch">
+	                    <input type="checkbox" style="color: transparent" id="allRestos" name="allRestos" onclick="getAllRestos();" />
+                    </div>
+                </div> 
+            </div>
+            <div class="row">
+	            <div class="col-md-9 col-xs-9">Filipino</div>
+	            <div class="col-md-3 col-xs-3">
+		            <div class="material-switch">
+			            <input type="checkbox" style="color: transparent" id="filipinoRestos" name="filipinoRestos" onclick="getFilRestos();" />
+		            </div>
+	            </div>
+            </div>
+			<div class="row">
+                <div class="col-md-9 col-xs-9">Seafood</div>
+				<div class="col-md-3 col-xs-3">
+					<div class="material-switch">
+						<input type="checkbox" style="color: transparent" id="seafoodRestos" name="seafoodRestos" onclick="getSeafoodRestos();" />
+					</div>                    
+				</div> 
+			</div>
+			<div class="row">
+				<div class="col-md-9 col-xs-9">Cafes</div>
+				<div class="col-md-3 col-xs-3">
+					<div class="material-switch">
+						<input type="checkbox" style="color: transparent" id="cafes" name="cafes" onclick="getCafes();" />
+					</div>                    
+				</div> 
+			</div>
         </div>
     </div>
     <div id="map"></div>
